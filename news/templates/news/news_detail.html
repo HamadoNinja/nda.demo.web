@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{{ news.title_i18n }}{% endblock %}
+
+{% block content %}
+
+<section class="bg-[#e0b845] py-6 text-center">
+  <p class="uppercase text-white text-xs tracking-widest mb-1">
+    {% trans "National Development Agency" %}
+  </p>
+
+  <h1 class="text-2xl font-extrabold text-white mb-2">
+    {{ news.title_i18n }}
+  </h1>
+
+  <div class="w-10 h-0.5 bg-white mx-auto"></div>
+</section>
+
+<section class="bg-[#0f3b43] py-20">
+  <div class="max-w-5xl mx-auto px-4 bg-white rounded-lg shadow-lg p-10">
+
+    <p class="text-gray-500 mb-8">
+      {{ news.published_at|date:"M d, Y" }}
+    </p>
+
+    {% if news.image %}
+      <img src="{{ news.image.url }}" alt="{{ news.title_i18n }}" class="w-full rounded-lg mb-10">
+    {% endif %}
+
+    {% if news.content_i18n %}
+      <div class="text-gray-700 leading-relaxed text-lg mb-10">
+        {{ news.content_i18n|linebreaks }}
+      </div>
+    {% endif %}
+
+    {% if news.sections.exists %}
+      <div class="space-y-10">
+        {% for s in news.sections.all %}
+          <div>
+            {% if s.title_i18n %}
+              <h2 class="text-xl font-bold text-yellow-600 mb-3">
+                {{ s.title_i18n }}
+              </h2>
+            {% endif %}
+            <div class="text-gray-700 leading-relaxed">
+              {{ s.body_i18n|linebreaks }}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    {% if news.images.exists %}
+      <div class="mt-12">
+        <h3 class="text-xl font-extrabold text-gray-800 mb-4">
+          {% trans "Images" %}
+        </h3>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {% for img in news.images.all %}
+            <img src="{{ img.image.url }}"
+                 alt="{{ img.caption_i18n|default:news.title_i18n }}"
+                 class="rounded-lg">
+          {% endfor %}
+        </div>
+      </div>
+    {% endif %}
+
+    <div class="mt-10">
+      <a href="{% url 'news' %}"
+         class="text-yellow-600 font-bold hover:underline">
+        ← {% trans "Back to News" %}
+      </a>
+    </div>
+
+  </div>
+</section>
+
+{% endblock %}

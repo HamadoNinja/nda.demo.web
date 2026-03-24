@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{{ video.title_i18n }}{% endblock %}
+
+{% block content %}
+
+<!-- Header -->
+<section class="bg-[#e0b845] py-6 text-center">
+  <p class="uppercase text-white text-xs tracking-widest mb-1">
+    {% trans "National Development Agency" %}
+  </p>
+
+  <h1 class="text-2xl font-extrabold text-white mb-2">
+    {{ video.title_i18n }}
+  </h1>
+
+  <div class="w-10 h-0.5 bg-white mx-auto"></div>
+</section>
+
+<!-- Content -->
+<section class="bg-[#0f3b43] py-20">
+  <div class="max-w-5xl mx-auto px-4 bg-white rounded-lg shadow-lg p-10 {% if LANGUAGE_BIDI %}text-right{% endif %}">
+
+    <!-- meta -->
+    <div class="flex flex-wrap gap-3 items-center justify-between mb-6 {% if LANGUAGE_BIDI %}flex-row-reverse{% endif %}">
+      <div class="flex flex-wrap gap-3 items-center {% if LANGUAGE_BIDI %}flex-row-reverse{% endif %}">
+
+        {% if video.duration %}
+          <span class="inline-block bg-black/80 text-white text-xs font-bold px-3 py-1 rounded-full">
+            {{ video.duration }}
+          </span>
+        {% elif video.duration_seconds %}
+          <span class="inline-block bg-black/80 text-white text-xs font-bold px-3 py-1 rounded-full">
+            {{ video.duration_seconds }}s
+          </span>
+        {% endif %}
+      </div>
+
+      <p class="text-gray-500 text-sm">
+        {{ video.published_at|date:"M d, Y" }}
+      </p>
+    </div>
+
+    <!-- Embedded Video -->
+    <div class="w-full rounded-lg overflow-hidden mb-10">
+      <iframe width="560" 
+      height="315" 
+      src="{{ video.youtube_embed_url }}" 
+      title="YouTube video player" 
+      frameborder="0" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+      referrerpolicy="strict-origin-when-cross-origin" 
+      allowfullscreen></iframe>
+      <!-- <iframe
+        src="{{ video.youtube_embed_url }}"
+        class="w-full h-[420px]"
+        frameborder="0"
+        allowfullscreen>
+      </iframe> -->
+      <!-- <p>{{ video.youtube_url }}</p> -->
+<!-- <p>{{ video.youtube_embed_url }}</p> -->
+
+    </div>
+
+    <!-- Description -->
+    {% if video.description_i18n %}
+      <div class="text-gray-700 leading-relaxed text-lg">
+        {{ video.description_i18n|linebreaks }}
+      </div>
+    {% endif %}
+
+    <!-- Back link -->
+    <div class="mt-10">
+      <a href="{% url 'videos:video_list' %}"
+         class="text-yellow-600 font-bold hover:underline">
+        ← {% trans "Back to Videos" %}
+      </a>
+    </div>
+
+  </div>
+</section>
+
+{% endblock %}
