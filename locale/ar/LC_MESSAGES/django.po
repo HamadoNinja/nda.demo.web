@@ -1,0 +1,484 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-01-19 03:12-0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#: .\aboutus\templates\aboutus\aboutus.html:4
+#: .\aboutus\templates\aboutus\aboutus.html:14 .\home\templates\base.html:71
+#: .\home\templates\base.html:161 .\home\templates\home\home.html:67
+msgid "About Us"
+msgstr "من نحن"
+
+#: .\aboutus\templates\aboutus\aboutus.html:4
+#: .\aboutus\templates\aboutus\aboutus.html:11
+#: .\contact\templates\contact\contact.html:4
+#: .\contact\templates\contact\contact.html:12 .\home\templates\base.html:10
+#: .\home\templates\base.html:171 .\home\templates\home\home.html:4
+#: .\home\templates\home\home.html:52 .\home\templates\home\home.html:116
+#: .\news\templates\news\news_detail.html:9
+#: .\news\templates\news\news_list.html:12
+#: .\projects\templates\projects\project_detail.html:9
+#: .\projects\templates\projects\projects_list.html:11
+#: .\services\templates\services\services.html:4
+#: .\services\templates\services\services.html:12
+#: .\videos\templates\videos\video_detail.html:11
+#: .\videos\templates\videos\video_list.html:76
+msgid "National Development Agency"
+msgstr "الجهاز الوطني للتنمية"
+
+#: .\aboutus\templates\aboutus\aboutus.html:26
+msgctxt "aboutus_title"
+msgid "The National Development Agency"
+msgstr "الجهاز الوطني للتنمية"
+
+#: .\aboutus\templates\aboutus\aboutus.html:31
+msgctxt "aboutus_intro"
+msgid ""
+"The National Development Agency is a governmental entity dedicated to "
+"achieving comprehensive and sustainable development across the country."
+msgstr ""
+"الوكالة الوطنية للتنمية هي كيان حكومي مكرس لتحقيق تنمية شاملة ومستدامة في "
+"جميع أنحاء البلاد"
+
+#: .\aboutus\templates\aboutus\aboutus.html:37
+msgctxt "aboutus_list_title"
+msgid "The Agency aims to foster national development through:"
+msgstr "تهدف الهيئة إلى تعزيز التنمية الوطنية من خلال"
+
+#: .\aboutus\templates\aboutus\aboutus.html:44
+msgctxt "aboutus_label"
+msgid "Economic Growth:"
+msgstr "النمو الاقتصادي"
+
+#: .\aboutus\templates\aboutus\aboutus.html:45
+msgctxt "aboutus_text"
+msgid ""
+"Supporting economic expansion by improving the business environment, "
+"attracting investments, fostering innovation, and developing national "
+"industries."
+msgstr ""
+"دعم التوسع الاقتصادي من خلال تحسين بيئة الأعمال، وجذب الاستثمارات، وتعزيز "
+"الابتكار، وتطوير الصناعات الوطنية"
+
+#: .\aboutus\templates\aboutus\aboutus.html:52
+msgctxt "aboutus_label"
+msgid "Quality of Life Enhancement:"
+msgstr "تحسين جودة الحياة"
+
+#: .\aboutus\templates\aboutus\aboutus.html:53
+msgctxt "aboutus_text"
+msgid ""
+"Improving essential services such as healthcare and housing to enhance "
+"community well-being."
+msgstr ""
+"تحسين الخدمات الأساسية مثل الرعاية الصحية والإسكان لتعزيز رفاهية المجتمع"
+
+#: .\aboutus\templates\aboutus\aboutus.html:60
+msgctxt "aboutus_label"
+msgid "Sustainable Development:"
+msgstr "التنمية المستدامة"
+
+#: .\aboutus\templates\aboutus\aboutus.html:61
+msgctxt "aboutus_text"
+msgid ""
+"Preserving natural resources, developing sustainable infrastructure, and "
+"promoting renewable energy."
+msgstr ""
+"الحفاظ على الموارد الطبيعية، وتطوير البنية التحتية المستدامة، وتعزيز "
+"الطاقةالمتجددة"
+
+#: .\aboutus\templates\aboutus\aboutus.html:68
+msgctxt "aboutus_label"
+msgid "Social Equity:"
+msgstr "العدالة الاجتماعية"
+
+#: .\aboutus\templates\aboutus\aboutus.html:69
+msgctxt "aboutus_text"
+msgid ""
+"Reducing economic and social disparities and promoting inclusivity across "
+"all segments of society."
+msgstr ""
+"الحد من التفاوتات الاقتصادية والاجتماعية وتعزيز الشمولية في جميع شرائح "
+"المجتمع"
+
+#: .\aboutus\templates\aboutus\aboutus.html:76
+msgctxt "aboutus_label"
+msgid "Regional Development:"
+msgstr "التنمية الإقليمية"
+
+#: .\aboutus\templates\aboutus\aboutus.html:77
+msgctxt "aboutus_text"
+msgid ""
+"Directing development projects to all regions, enhancing infrastructure, and "
+"improving services in underprivileged areas."
+msgstr ""
+"توجيه مشاريع التنمية إلى جميع المناطق، وتعزيز البنية التحتية، وتحسين الخدمات "
+"في المناطق المحرومة"
+
+#: .\aboutus\templates\aboutus\aboutus.html:86
+msgid "National Development Agency Building"
+msgstr "الجهاز الوطني للتنمية"
+
+#: .\contact\templates\contact\contact.html:4
+#: .\contact\templates\contact\contact.html:16 .\home\templates\base.html:105
+#: .\home\templates\base.html:166
+msgid "Contact Us"
+msgstr "تواصل"
+
+#: .\contact\templates\contact\contact.html:30
+msgid "Get in touch"
+msgstr "تواصل معنا"
+
+#: .\contact\templates\contact\contact.html:31
+msgid "Contact Form"
+msgstr "تواصل"
+
+#: .\contact\templates\contact\contact.html:38
+msgid "User name"
+msgstr "اسم المستخدم"
+
+#: .\contact\templates\contact\contact.html:42
+msgid "Enter your name"
+msgstr "أدخل اسمك"
+
+#: .\contact\templates\contact\contact.html:49
+#: .\contact\templates\contact\contact.html:113
+msgid "Email"
+msgstr "بريد إلكتروني"
+
+#: .\contact\templates\contact\contact.html:53
+msgid "Enter your email"
+msgstr "أدخل بريدك الإلكتروني"
+
+#: .\contact\templates\contact\contact.html:60
+#: .\contact\templates\contact\contact.html:107
+msgid "Phone"
+msgstr "هاتف"
+
+#: .\contact\templates\contact\contact.html:73
+msgid "Message"
+msgstr "رسالة"
+
+#: .\contact\templates\contact\contact.html:77
+msgid "Write your message..."
+msgstr "اكتب رسالتك..."
+
+#: .\contact\templates\contact\contact.html:88
+msgid "Send"
+msgstr "ارسال"
+
+#: .\contact\templates\contact\contact.html:97
+msgid "Always stay in touch"
+msgstr "ابقَ على اتصال دائم"
+
+#: .\contact\templates\contact\contact.html:101
+msgid ""
+"You can contact us using the following details and we will get back to you "
+"as soon as possible."
+msgstr ""
+"يمكنكم التواصل معنا باستخدام البيانات التالية وسنقوم بالرد عليكم في أقرب وقت "
+"ممكن."
+
+#: .\contact\templates\contact\contact.html:120
+msgid "Address"
+msgstr "عنوان"
+
+#: .\contact\templates\contact\contact.html:121
+msgid "Benghazi, Libya"
+msgstr "بنغازي, ليبيا "
+
+#: .\contact\templates\contact\contact.html:125
+msgid "Working Hours"
+msgstr "ساعات العمل"
+
+#: .\contact\templates\contact\contact.html:126
+msgid "Sat - Thu"
+msgstr "السبت - الخميس"
+
+#: .\contact\templates\contact\contact.html:127
+msgid "09:00 AM - 04:00 PM"
+msgstr "من الساعة 9:00 صباحاً إلى الساعة 4:00 مساءً"
+
+#: .\home\templates\base.html:64 .\home\templates\base.html:160
+msgid "Home"
+msgstr "الصفحة الرئيسية"
+
+#: .\home\templates\base.html:78 .\home\templates\base.html:162
+#: .\services\templates\services\services.html:4
+#: .\services\templates\services\services.html:15
+msgid "Our Services"
+msgstr "خدماتنا"
+
+#: .\home\templates\base.html:85 .\home\templates\base.html:163
+msgid "Projects"
+msgstr "مشاريعنا"
+
+#: .\home\templates\base.html:92 .\home\templates\base.html:164
+msgid "News"
+msgstr "اخبارنا"
+
+#: .\home\templates\base.html:98 .\home\templates\base.html:165
+msgid "videos"
+msgstr "الفيديوهات"
+
+#: .\home\templates\base.html:115
+msgid "National Development Agency Logo"
+msgstr "الجهاز الوطني التنمية"
+
+#: .\home\templates\base.html:171
+msgid "All rights reserved."
+msgstr "جميع الحقوق محفوظة"
+
+#: .\home\templates\home\home.html:56
+msgid "Sustainable development with no Limits"
+msgstr "التنمية المستدامة بلا حدود"
+
+#: .\home\templates\home\home.html:60
+msgid "Towards a sustainable future"
+msgstr "نحو مستقبل مستدام"
+
+#: .\home\templates\home\home.html:72
+msgid "Our Works"
+msgstr "اعمالنا"
+
+#: .\home\templates\home\home.html:91
+msgid "Airport"
+msgstr "مطار"
+
+#: .\home\templates\home\home.html:99
+msgid "Worker"
+msgstr "عامل"
+
+#: .\home\templates\home\home.html:107
+msgid "Agriculture"
+msgstr "زراعة"
+
+#: .\home\templates\home\home.html:122 .\home\templates\home\home.html:234
+msgid ""
+"The National Development Agency is a governmental entity dedicated to "
+"achieving comprehensive and sustainable development across the country."
+msgstr ""
+"الوكالة الوطنية للتنمية هي كيان حكومي مكرس لتحقيق تنمية شاملة ومستدامة في "
+"جميع أنحاء البلاد"
+
+#: .\home\templates\home\home.html:129
+msgid "Read More"
+msgstr "اقرأ المزيد"
+
+#: .\home\templates\home\home.html:140
+msgid "Years of Experience"
+msgstr "سنوات الخبرة"
+
+#: .\home\templates\home\home.html:145
+msgid "Clients Satisfaction Rate"
+msgstr "معدل رضا العملاء"
+
+#: .\home\templates\home\home.html:150
+msgid "Completed Projects"
+msgstr "المشاريع المنجزة"
+
+#: .\home\templates\home\home.html:155
+msgid "Number of Clients"
+msgstr "عدد العملاء"
+
+#: .\home\templates\home\home.html:164
+msgid "Objectives of the National Development Agency"
+msgstr "أهداف الجهاز الوطني للتنمية"
+
+#: .\home\templates\home\home.html:168
+msgid "The Authority aims to foster national development through:"
+msgstr "تهدف الهيئة إلى تعزيز التنمية الوطنية من خلال"
+
+#: .\home\templates\home\home.html:175 .\home\templates\home\home.html:177
+msgid "Economic Growth"
+msgstr "النمو الاقتصادي"
+
+#: .\home\templates\home\home.html:180
+msgid ""
+"Supporting economic expansion by improving the business environment, "
+"attracting investments, fostering innovation, and developing national "
+"industries."
+msgstr ""
+"دعم التوسع الاقتصادي من خلال تحسين بيئة الأعمال، وجذب الاستثمارات، وتعزيز "
+"الابتكار، وتطوير الصناعات الوطنية"
+
+#: .\home\templates\home\home.html:188 .\home\templates\home\home.html:190
+msgid "Regional Development"
+msgstr "التنمية الإقليمية"
+
+#: .\home\templates\home\home.html:193
+msgid ""
+"Improving essential services such as healthcare and housing to enhance "
+"community well-being."
+msgstr ""
+"تحسين الخدمات الأساسية مثل الرعاية الصحية والإسكان لتعزيز رفاهية المجتمع"
+
+#: .\home\templates\home\home.html:201 .\home\templates\home\home.html:203
+msgid "Sustainable Development"
+msgstr "التنمية المستدامة"
+
+#: .\home\templates\home\home.html:206
+msgid ""
+"Preserving natural resources, developing sustainable infrastructure, and "
+"promoting renewable energy."
+msgstr ""
+"الحفاظ على الموارد الطبيعية، وتطوير البنية التحتية المستدامة، وتعزيز "
+"الطاقةالمتجددة"
+
+#: .\home\templates\home\home.html:214 .\home\templates\home\home.html:216
+msgid "Social Equity"
+msgstr "العدالة الاجتماعية"
+
+#: .\home\templates\home\home.html:219
+msgid ""
+"Reducing economic and social disparities and promoting inclusivity across "
+"all segments of society."
+msgstr ""
+"الحد من التفاوتات الاقتصادية والاجتماعية وتعزيز الشمولية في جميع شرائح "
+"المجتمع"
+
+#: .\home\templates\home\home.html:230 .\projects\views.py:10
+msgid "Our Projects"
+msgstr "مشاريعنا"
+
+#: .\home\templates\home\home.html:253 .\news\templates\news\news_list.html:50
+#: .\projects\templates\projects\projects_list.html:48
+msgid "Read more"
+msgstr "اقرأ المزيد"
+
+#: .\home\templates\home\home.html:263
+msgid "View All Projects"
+msgstr "عرض جميع المشاريع"
+
+#: .\home\templates\home\home.html:268 .\projects\views.py:11
+msgid "No projects available."
+msgstr "لا توجد مشاريع متاحة"
+
+#: .\news\templates\news\news_detail.html:56
+#: .\projects\templates\projects\project_detail.html:60
+msgid "Images"
+msgstr "الصور"
+
+#: .\news\templates\news\news_detail.html:72
+msgid "Back to News"
+msgstr "الرجوع إلى الأخبار"
+
+#: .\news\templates\news\news_list.html:66
+msgid "Prev"
+msgstr "السابق"
+
+#: .\news\templates\news\news_list.html:71
+msgid "Page"
+msgstr "صفحة"
+
+#: .\news\templates\news\news_list.html:71
+msgid "of"
+msgstr "ل"
+
+#: .\news\templates\news\news_list.html:77
+msgid "Next"
+msgstr "التالي"
+
+#: .\news\views.py:17
+msgid "Latest News"
+msgstr "آخر الأخبار"
+
+#: .\news\views.py:18
+msgid "No news available."
+msgstr "لا توجد اخبار متاحة"
+
+#: .\projects\templates\projects\project_detail.html:76
+msgid "Back to Projects"
+msgstr "الرجوع إلى المشاريع"
+
+#: .\services\templates\services\services.html:34
+msgid "Strategic Projects"
+msgstr "المشاريع الاستراتيجية"
+
+#: .\services\templates\services\services.html:37
+msgid ""
+"Implementing strategic projects in health, education, agriculture, and "
+"housing."
+msgstr "تنفيذ مشاريع استراتيجية في مجالات الصحة والتعليم والزراعة والإسكان"
+
+#: .\services\templates\services\services.html:47
+msgid "Infrastructure Development"
+msgstr "تطوير البنية التحتية"
+
+#: .\services\templates\services\services.html:50
+msgid "Developing roads, water networks, and sewage systems across regions."
+msgstr "تطوير الطرق وشبكات المياه وأنظمة الصرف الصحي في مختلف المناطق"
+
+#: .\services\templates\services\services.html:60
+msgid "Agriculture Support"
+msgstr "دعم الزراعة"
+
+#: .\services\templates\services\services.html:63
+msgid "Supporting crop projects and improving livestock production."
+msgstr "دعم مشاريع المحاصيل وتحسين إنتاج الثروة الحيوانية"
+
+#: .\services\templates\services\services.html:73
+msgid "Emergency Response"
+msgstr "الاستجابة للطوارئ"
+
+#: .\services\templates\services\services.html:76
+msgid "Supporting affected areas and providing emergency assistance."
+msgstr "دعم المناطق المتضررة وتقديم المساعدة الطارئة"
+
+#: .\services\templates\services\services.html:86
+msgid "Jobs & Training"
+msgstr "الوظائف والتدريب"
+
+#: .\services\templates\services\services.html:89
+msgid "Creating employment and training opportunities for national talents."
+msgstr "توفير فرص العمل والتدريب للمواهب الوطنية"
+
+#: .\services\templates\services\services.html:99
+msgid "Local Production"
+msgstr "إنتاج محلي"
+
+#: .\services\templates\services\services.html:102
+msgid ""
+"Supporting local factories in clothing, furniture, and building materials."
+msgstr "دعم المصانع المحلية في قطاعات الملابس والأثاث ومواد البناء"
+
+#: .\videos\templates\videos\video_detail.html:69
+
+#| msgid "Back to News"
+msgid "Back to Videos"
+msgstr "الرجوع إلى الفيديوهات"
+
+#: .\videos\templates\videos\video_list.html:4
+#: .\videos\templates\videos\video_list.html:79
+msgid "Videos"
+msgstr "الفيديوهات"
+
+#: .\videos\templates\videos\video_list.html:102
+msgid "No Thumbnail"
+msgstr "لا توجد صورة مصغرة"
+
+#: .\videos\templates\videos\video_list.html:147
+#| msgid "No news available."
+msgid "No videos available."
+msgstr "لا توجد فيديوهات متاحة"
+
+#~ msgid "English"
+#~ msgstr "English"
+
+#~ msgid "Arabic"
+#~ msgstr "عربية"
