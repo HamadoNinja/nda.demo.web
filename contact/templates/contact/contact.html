@@ -1,0 +1,180 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Contact Us" %} | {% trans "National Development Agency" %}{% endblock %}
+
+{% block content %}
+
+<!-- Top Banner (Light Version) -->
+<section class="bg-[#e0b845] py-8">
+  <div class="max-w-7xl mx-auto px-6 text-center text-white">
+    <p class="text-xs tracking-wide uppercase opacity-80">
+      {% trans "National Development Agency" %}
+    </p>
+    <h1 class="text-2xl md:text-3xl font-semibold mt-1">
+      {% trans "Contact Us " %}
+    </h1>
+    <div class="w-10 h-[1px] bg-white/70 mx-auto mt-3"></div>
+  </div>
+</section>             
+
+<!-- Main -->                                                                                                                                                                                            
+<section class="bg-[#0e3a43] py-14">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start {% if LANGUAGE_BIDI %}lg:flex-row-reverse{% endif %}">
+
+      <!-- LEFT: Form Card -->
+      <div class="bg-white rounded-2xl shadow-lg p-8 {% if LANGUAGE_BIDI %}text-right{% endif %}">
+        <p class="text-gray-500 text-sm text-center">{% trans "Get in touch" %}</p>
+        <h2 class="text-2xl font-extrabold text-gray-900 text-center mt-1">{% trans "Contact Form" %}</h2>
+        <div class="w-14 h-[2px] bg-yellow-500 mx-auto mt-3"></div>
+
+        <form class="mt-10 space-y-6" method="post">
+          {% csrf_token %}
+
+          <div>
+            <label class="block text-sm font-semibold text-gray-700 mb-2">{% trans "User name" %}</label>
+            <input
+              type="text"
+              name="username"
+              placeholder="{% trans 'Enter your name' %}"
+              class="w-full rounded-full border border-gray-200 px-5 py-3 outline-none focus:ring-2 focus:ring-yellow-500"
+              required
+            />
+          </div>
+
+          <div>
+            <label class="block text-sm font-semibold text-gray-700 mb-2">{% trans "Email" %}</label>
+            <input
+              type="email"
+              name="email"
+              placeholder="{% trans 'Enter your email' %}"
+              class="w-full rounded-full border border-gray-200 px-5 py-3 outline-none focus:ring-2 focus:ring-yellow-500"
+              required
+            />
+          </div>
+
+          <div>
+            <label class="block text-sm font-semibold text-gray-700 mb-2">{% trans "Phone" %}</label>
+            <input
+              id="phone"
+              type="tel"
+              name="phone_display"
+              placeholder=""
+              class="w-full rounded-full border border-gray-200 px-5 py-3 outline-none focus:ring-2 focus:ring-yellow-500"
+              required
+            />
+            <input type="hidden" name="phone" id="phone_full">
+          </div>
+
+          <div>
+            <label class="block text-sm font-semibold text-gray-700 mb-2">{% trans "Message" %}</label>
+            <textarea
+              name="message"
+              rows="6"
+              placeholder="{% trans 'Write your message...' %}"
+              class="w-full rounded-2xl border border-gray-200 px-5 py-4 outline-none focus:ring-2 focus:ring-yellow-500 resize-none"
+              required
+            ></textarea>
+          </div>
+
+          <div class="flex justify-center pt-2">
+            <button
+              type="submit"
+              class="bg-yellow-500 text-gray-900 px-10 py-3 rounded-full font-extrabold uppercase hover:bg-yellow-600 transition"
+            >
+              {% trans "Send" %}
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- RIGHT: Info Card -->
+      <div class="bg-white rounded-2xl shadow-lg p-8 text-center {% if LANGUAGE_BIDI %}text-right{% endif %}">
+        <h2 class="text-3xl font-extrabold text-gray-900">
+          {% trans "Always stay in touch" %}
+        </h2>
+
+        <p class="text-gray-600 mt-3 leading-relaxed">
+          {% trans "You can contact us using the following details and we will get back to you as soon as possible." %}
+        </p>
+
+        <div class="mt-10 space-y-10">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+            <div>
+              <h3 class="font-bold text-gray-900">{% trans "Phone" %}</h3>
+              <p class="text-gray-600 mt-2">+218 000000000</p>
+              <p class="text-gray-600">+218 000000000</p>
+            </div>
+
+            <div>
+              <h3 class="font-bold text-gray-900">{% trans "Email" %}</h3>
+              <p class="text-gray-600 mt-2">nda@nda.ly</p>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+            <div>
+              <h3 class="font-bold text-gray-900">{% trans "Address" %}</h3>
+              <p class="text-gray-600 mt-2">{% trans "Benghazi, Libya" %}</p>
+            </div>
+
+            <div>
+              <h3 class="font-bold text-gray-900">{% trans "Working Hours" %}</h3>
+              <p class="text-gray-600 mt-2">{% trans "Sat - Thu" %}</p>
+              <p class="text-gray-600 mt-1">{% trans "09:00 AM - 04:00 PM" %}</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-10">
+          <div class="flex justify-center gap-4">
+            <a href="#" class="h-11 w-11 rounded-full border border-gray-300 flex items-center justify-center text-gray-800 text-lg hover:bg-yellow-500 hover:text-white hover:border-yellow-500 transition">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a href="#" class="h-11 w-11 rounded-full border border-gray-300 flex items-center justify-center text-gray-800 text-lg hover:bg-yellow-500 hover:text-white hover:border-yellow-500 transition">
+              <i class="fa-brands fa-x-twitter"></i>
+            </a>
+            <a href="#" class="h-11 w-11 rounded-full border border-gray-300 flex items-center justify-center text-gray-800 text-lg hover:bg-yellow-500 hover:text-white hover:border-yellow-500 transition">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="#" class="h-11 w-11 rounded-full border border-gray-300 flex items-center justify-center text-gray-800 text-lg hover:bg-yellow-500 hover:text-white hover:border-yellow-500 transition">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="#" class="h-11 w-11 rounded-full border border-gray-300 flex items-center justify-center text-gray-800 text-lg hover:bg-yellow-500 hover:text-white hover:border-yellow-500 transition">
+              <i class="fa-brands fa-youtube"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
+
+{% block extra_js %}
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const input = document.querySelector("#phone");
+    const hiddenFull = document.querySelector("#phone_full");
+    if (!input || !window.intlTelInput) return;
+
+    const iti = window.intlTelInput(input, {
+      initialCountry: "ly",
+      separateDialCode: true,
+      nationalMode: false,
+      preferredCountries: ["ly", "eg", "tn", "tr", "sa"],
+      utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@19.5.7/build/js/utils.js",
+    });
+
+    const form = input.closest("form");
+    if (form) {
+      form.addEventListener("submit", function () {
+        hiddenFull.value = iti.getNumber();
+      });
+    }
+  });
+</script>
+{% endblock %}

@@ -1,0 +1,211 @@
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+{% get_current_language_bidi as LANGUAGE_BIDI %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE }}" dir="{% if LANGUAGE_BIDI %}rtl{% else %}ltr{% endif %}">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>{% block title %}{% trans "National Development Agency" %}{% endblock %}</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- intl-tel-input CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@19.5.7/build/css/intlTelInput.css">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --nav-h: 88px; /* ارتفاع ثابت للـNavbar */
+    }
+
+    html, body { margin:0; padding:0; }
+
+    body{
+      font-family: 'Poppins', sans-serif;
+      font-size: 16px;
+      direction: ltr;
+      text-align: left;
+    }
+
+    html[dir="rtl"] body{
+      font-family: 'Cairo', sans-serif;
+      font-size: 16px; /* خليه نفس الإنجليزي باش ما يتلخبطش */
+      direction: rtl;
+      text-align: right;
+    }
+  </style>
+
+  {% block extra_head %}{% endblock %}
+</head>
+
+<body class="bg-white">
+
+<!-- Navbar -->
+<header class="fixed top-0 left-0 w-full bg-white shadow-sm z-50 h-[var(--nav-h)]">
+  <div class="max-w-7xl mx-auto h-full flex items-center justify-between px-6
+              {% if LANGUAGE_BIDI %}flex-row-reverse{% endif %}">
+
+    <!-- Menu -->
+    <nav>
+      <ul class="flex items-center gap-6 text-sm font-semibold text-gray-700 uppercase">
+        <li>
+          <a href="{% url 'home' %}"
+             class="{% if request.resolver_match.url_name == 'home' %} text-yellow-500 border-b-2 border-yellow-500 {% else %} text-gray-700 hover:text-yellow-500 {% endif %} transition pb-1">
+            {% trans "Home" %}
+          </a>
+        </li>
+
+        <li>
+          <a href="{% url 'aboutus' %}"
+             class="{% if request.resolver_match.url_name == 'aboutus' %} text-yellow-500 border-b-2 border-yellow-500 {% else %} text-gray-700 hover:text-yellow-500 {% endif %} transition pb-1">
+            {% trans "About Us" %}
+          </a>
+        </li>
+
+        <li>
+          <a href="{% url 'services' %}"
+             class="{% if request.resolver_match.url_name == 'services' %} text-yellow-500 border-b-2 border-yellow-500 {% else %} text-gray-700 hover:text-yellow-500 {% endif %} transition pb-1">
+            {% trans "Our Services" %}
+          </a>
+        </li>
+
+        <li>
+          <a href="{% url 'projects' %}"
+             class="{% if request.resolver_match.url_name == 'projects' %} text-yellow-500 border-b-2 border-yellow-500 {% else %} text-gray-700 hover:text-yellow-500 {% endif %} transition pb-1">
+            {% trans "Projects" %}
+          </a>
+        </li>
+
+        <li>
+          <a href="{% url 'news' %}"
+             class="{% if request.resolver_match.url_name == 'news' %} text-yellow-500 border-b-2 border-yellow-500 {% else %} text-gray-700 hover:text-yellow-500 {% endif %} transition pb-1">
+            {% trans "News" %}
+          </a>
+        </li>
+
+        <li>
+          <a href="{% url 'videos:video_list' %}"
+             class="{% if request.resolver_match.namespace == 'videos' %} text-yellow-500 border-b-2 border-yellow-500 {% else %} text-gray-700 hover:text-yellow-500 {% endif %} transition pb-1">
+            {% trans "videos" %}
+          </a>
+        </li>
+
+        <li>
+          <a href="{% url 'contact' %}"
+             class="{% if request.resolver_match.url_name == 'contact' %} text-yellow-500 border-b-2 border-yellow-500 {% else %} text-gray-700 hover:text-yellow-500 {% endif %} transition pb-1">
+            {% trans "Contact Us" %}
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Logo -->
+<div class="flex items-center justify-center flex-shrink-0">
+  <a href="{% url 'home' %}" class="block">
+    <img
+      src="{% static 'images/logo.png' %}"
+      alt="{% trans 'National Development Agency Logo' %}"
+      class="h-12 w-auto object-contain"
+    />
+  </a>
+</div>
+
+
+    <!-- Language Switch -->
+    <div class="w-44 flex justify-end">
+      <form action="{% url 'set_language' %}" method="post" class="flex items-center gap-3">
+        {% csrf_token %}
+        <input type="hidden" name="next" value="{{ request.get_full_path }}">
+
+        <button type="submit" name="language" value="en"
+          class="flex items-center gap-2 px-4 py-2 rounded-full border
+          {% if LANGUAGE_CODE == 'en' %} bg-yellow-500 text-white border-yellow-500 shadow-md
+          {% else %} bg-white text-gray-700 border-gray-300 hover:bg-yellow-500 hover:text-white hover:border-yellow-500
+          {% endif %} transition duration-200 text-sm font-bold">
+          <img src="https://flagcdn.com/w20/gb.png" srcset="https://flagcdn.com/w40/gb.png 2x" width="20" height="15" alt="UK" class="rounded-sm">
+          <span>EN</span>
+        </button>
+
+        <button type="submit" name="language" value="ar"
+          class="flex items-center gap-2 px-4 py-2 rounded-full border
+          {% if LANGUAGE_CODE == 'ar' %} bg-yellow-500 text-white border-yellow-500 shadow-md
+          {% else %} bg-white text-gray-700 border-gray-300 hover:bg-yellow-500 hover:text-white hover:border-yellow-500
+          {% endif %} transition duration-200 text-sm font-bold">
+          <img src="https://flagcdn.com/w20/ly.png" srcset="https://flagcdn.com/w40/ly.png 2x" width="20" height="15" alt="Libya" class="rounded-sm">
+          <span>LY</span>
+        </button>
+      </form>
+    </div>
+
+  </div>
+</header>
+
+<!-- Page Content -->
+<main class="pt-[var(--nav-h)]">
+  {% block content %}{% endblock %}
+</main>
+
+<!-- Footer -->
+<footer class="bg-gray-900 text-white py-8">
+  <div class="max-w-6xl mx-auto px-4 text-center">
+
+    <nav class="mb-6">
+      <ul class="flex justify-center gap-8 text-sm font-semibold uppercase">
+        <li><a href="{% url 'home' %}" class="hover:text-yellow-500 transition">{% trans "Home" %}</a></li>
+        <li><a href="{% url 'aboutus' %}" class="hover:text-yellow-500 transition">{% trans "About Us" %}</a></li>
+        <li><a href="{% url 'services' %}" class="hover:text-yellow-500 transition">{% trans "Our Services" %}</a></li>
+        <li><a href="{% url 'projects' %}" class="hover:text-yellow-500 transition">{% trans "Projects" %}</a></li>
+        <li><a href="{% url 'news' %}" class="hover:text-yellow-500 transition">{% trans "News" %}</a></li>
+        <li><a href="{% url 'videos:video_list' %}" class="hover:text-yellow-500 transition">{% trans "videos" %}</a></li>
+        <li><a href="{% url 'contact' %}" class="hover:text-yellow-500 transition">{% trans "Contact Us" %}</a></li>
+      </ul>
+    </nav>
+
+    <div class="max-w-6xl mx-auto px-4 text-center">
+
+      <div class="flex justify-center space-x-4 mb-4">
+        <a href="#" class="hover:text-yellow-500 transition">
+          <img src="https://img.icons8.com/ios-filled/24/ffffff/facebook-new.png" alt="Facebook" class="h-6 w-6">
+        </a>
+        <a href="#" class="hover:text-yellow-500 transition">
+          <img src="https://img.icons8.com/ios-filled/24/ffffff/x.png" alt="X" class="h-6 w-6">
+        </a>
+        <a href="#" class="hover:text-yellow-500 transition">
+          <img src="https://img.icons8.com/ios-filled/24/ffffff/linkedin.png" alt="LinkedIn" class="h-6 w-6">
+        </a>
+        <a href="#" class="hover:text-yellow-500 transition">
+          <img src="https://img.icons8.com/ios-filled/24/ffffff/instagram-new.png" alt="Instagram" class="h-6 w-6">
+        </a>
+        <a href="https://www.youtube.com/@LibyaNDA" class="hover:text-yellow-500 transition">
+          <img src="https://img.icons8.com/ios-filled/24/ffffff/youtube-play.png" alt="YouTube" class="h-6 w-6">
+        </a>
+      </div>
+    </div>
+
+
+    <p class="text-gray-400 text-sm">
+      &copy; 2026 {% trans "National Development Agency" %}. {% trans "All rights reserved." %}
+    </p>
+  </div>
+
+  
+</footer>
+
+<!-- intl-tel-input JS -->
+<script src="https://cdn.jsdelivr.net/npm/intl-tel-input@19.5.7/build/js/intlTelInput.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/intl-tel-input@19.5.7/build/js/utils.js"></script>
+{% block extra_js %}{% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,328 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "National Development Agency" %}{% endblock %}
+
+{% block extra_head %}
+<style>
+  .hero-slide{
+    position:absolute;
+    inset:0;
+    opacity:0;
+    transform: scale(1.03);
+    transition: opacity .8s ease-in-out, transform 2.5s ease;
+  }
+  .hero-slide.active{
+    opacity:1;
+    transform: scale(1);
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+
+<!-- HERO SLIDER -->
+<section class="relative w-full h-screen overflow-hidden m-0 p-0 -mt-[var(--nav-h)]">
+
+  <!-- Slides -->
+  <div id="heroSlider" class="absolute inset-0">
+    <div class="hero-slide active bg-cover bg-center"
+      style="background-image:url(https://www.colliers.com/-/media/images/colliers/unitedstates/national/research/2024/office_construction_report_hero_1536x1040.ashx?bid=802e5edb1de543d2bb5ba40f457f3896)"></div>
+
+    <div class="hero-slide bg-cover bg-center"
+      style="background-image:url(https://home-dubai.de/wp-content/uploads/2023/10/Header-Offplan-Vs-Onplan.jpeg)"></div>
+
+    <div class="hero-slide bg-cover bg-center"
+      style="background-image:url(https://img.freepik.com/premium-photo/innovative-architecture-civil-engineering-building-construction-project_773922-7868.jpg?w=2000)"></div>
+  </div>
+
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-[#0f2f3a]/80"></div>
+
+  <!-- Left geometric overlay -->
+  <div class="absolute left-0 top-0 h-full w-[40%] opacity-20 pointer-events-none"
+       style="background-image:url('https://nda.ly/wp-content/uploads/2025/01/pattern.png'); background-size:cover; background-position:left;">
+  </div>
+
+  <!-- Content -->
+  <div class="relative z-10 h-full flex items-center">
+    <div class="w-full max-w-6xl mx-auto px-6">
+      <div class="max-w-3xl {% if LANGUAGE_BIDI %}text-right{% else %}text-left{% endif %}">
+        <p class="text-yellow-400 font-semibold mb-3 text-lg">
+          {% trans "National Development Agency" %}
+        </p>
+
+        <h1 class="text-white text-3xl md:text-5xl font-extrabold leading-tight">
+          {% trans "Sustainable development with no Limits" %}
+        </h1>
+
+        <p class="text-white/95 text-2xl md:text-3xl mt-2">
+          {% trans "Towards a sustainable future" %}
+        </p>
+
+        <div class="mt-10 flex w-full gap-5
+            {% if LANGUAGE_BIDI %}justify-end flex-row-reverse{% else %}justify-start{% endif %}">
+          <a href="{% url 'aboutus' %}"
+             class="bg-yellow-500 px-6 py-3 rounded-md font-bold hover:bg-yellow-600 transition">
+            {% trans "About Us" %}
+          </a>
+
+          <a href="{% url 'projects' %}"
+             class="bg-yellow-500 px-6 py-3 rounded-md font-bold hover:bg-yellow-600 transition">
+            {% trans "Our Works" %}
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section 2 -->
+<section class="w-full bg-[#f4f1e9] py-20">
+  <div class="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row items-center gap-16
+              {% if LANGUAGE_BIDI %}lg:flex-row-reverse{% endif %}">
+
+    <!-- Cards (Images) -->
+    <div class="flex gap-6">
+      <div class="w-[160px] h-[380px] rounded-2xl overflow-hidden shadow-lg">
+        <img
+          src="https://www.airport-technology.com/wp-content/uploads/sites/14/2020/06/Feature_Image-Kempegowda_International_Airport1.jpg"
+          alt="{% trans 'Airport' %}"
+          class="w-full h-full object-cover"
+        />
+      </div>
+
+      <div class="w-[160px] h-[380px] rounded-2xl overflow-hidden shadow-lg">
+        <img
+          src="https://as1.ftcdn.net/v2/jpg/07/04/64/06/1000_F_704640660_7Sbcm4r0orEpT2uuFFF0USbn2DQHJCB0.jpg"
+          alt="{% trans 'Worker' %}"
+          class="w-full h-full object-cover"
+        />
+      </div>
+
+      <div class="w-[160px] h-[380px] rounded-2xl overflow-hidden shadow-lg">
+        <img
+          src="https://static.vecteezy.com/system/resources/thumbnails/031/695/556/small_2x/sprawling-agricultural-farm-featuring-fields-of-crops-ai-generated-photo.jpg"
+          alt="{% trans 'Agriculture' %}"
+          class="w-full h-full object-cover"
+        />
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="max-w-xl {% if LANGUAGE_BIDI %}text-right{% endif %}">
+      <h2 class="text-yellow-500 font-extrabold text-4xl leading-tight mb-6">
+        {% trans "National Development Agency" %}
+      </h2>
+
+      <div class="w-12 h-[3px] bg-gray-900 mb-6 {% if LANGUAGE_BIDI %}ml-auto{% endif %}"></div>
+
+      <p class="text-gray-700 text-lg leading-relaxed mb-8">
+        {% trans "The National Development Agency is a governmental entity dedicated to achieving comprehensive and sustainable development across the country." %}
+      </p>
+
+      <a
+        href="{% url 'aboutus' %}"
+        class="inline-block bg-yellow-500 text-white font-bold px-8 py-3 rounded-md hover:bg-yellow-600 transition"
+      >
+        {% trans "Read More" %}
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- Section 3 -->
+<section id="stats" class="max-w-5xl mx-auto px-4 py-12 flex flex-wrap justify-between text-center bg-white">
+  <div class="w-1/2 md:w-1/5 mb-6 md:mb-0">
+    <h3 class="counter text-4xl font-extrabold text-yellow-500" data-target="12" data-suffix="+">0</h3>
+    <p class="text-gray-700 mt-2">{% trans "Years of Experience" %}</p>
+  </div>
+
+  <div class="w-1/2 md:w-1/5 mb-6 md:mb-0">
+    <h3 class="counter text-4xl font-extrabold text-yellow-500" data-target="100" data-suffix="%">0</h3>
+    <p class="text-gray-700 mt-2">{% trans "Clients Satisfaction Rate" %}</p>
+  </div>
+
+  <div class="w-1/2 md:w-1/5 mb-6 md:mb-0">
+    <h3 class="counter text-4xl font-extrabold text-yellow-500" data-target="648">0</h3>
+    <p class="text-gray-700 mt-2">{% trans "Completed Projects" %}</p>
+  </div>
+
+  <div class="w-1/2 md:w-1/5 mb-6 md:mb-0">
+    <h3 class="counter text-4xl font-extrabold text-yellow-500" data-target="900" data-suffix="+">0</h3>
+    <p class="text-gray-700 mt-2">{% trans "Number of Clients" %}</p>
+  </div>
+</section>
+
+<!-- Objectives Section 4 -->
+<section class="w-full bg-[#f4f1e9] py-20" dir="{% if LANGUAGE_BIDI %}rtl{% else %}ltr{% endif %}">
+  <div class="max-w-6xl mx-auto px-6">
+
+    <h2 class="text-3xl md:text-5xl font-extrabold text-yellow-500 text-center mb-6">
+      {% trans "Objectives of the National Development Agency" %}
+    </h2>
+
+    <p class="text-center text-gray-600 mb-14">
+      {% trans "The Authority aims to foster national development through:" %}
+    </p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 justify-items-center">
+      <!-- Card 1 -->
+      <div class="bg-white rounded-2xl shadow-lg overflow-hidden w-full max-w-[300px] {% if LANGUAGE_BIDI %}text-right{% else %}text-left{% endif %}">
+        <img src="https://nda.ly/wp-content/uploads/2025/03/Group-180-300x248.png"
+             alt="{% trans 'Economic Growth' %}" class="w-full h-44 object-cover" />
+        <div class="p-6">
+          <h3 class="text-lg font-extrabold text-yellow-500">{% trans "Economic Growth" %}</h3>
+          <div class="w-10 h-[3px] bg-gray-900 mt-3 mb-4 {% if LANGUAGE_BIDI %}ml-auto{% endif %}"></div>
+          <p class="text-gray-700 text-sm leading-relaxed">
+            {% trans "Supporting economic expansion by improving the business environment, attracting investments, fostering innovation, and developing national industries." %}
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="bg-white rounded-2xl shadow-lg overflow-hidden w-full max-w-[300px] {% if LANGUAGE_BIDI %}text-right{% else %}text-left{% endif %}">
+        <img src="https://nda.ly/wp-content/uploads/2025/03/Group-244-300x248.png"
+             alt="{% trans 'Regional Development' %}" class="w-full h-44 object-cover" />
+        <div class="p-6">
+          <h3 class="text-lg font-extrabold text-yellow-500">{% trans "Regional Development" %}</h3>
+          <div class="w-10 h-[3px] bg-gray-900 mt-3 mb-4 {% if LANGUAGE_BIDI %}ml-auto{% endif %}"></div>
+          <p class="text-gray-700 text-sm leading-relaxed">
+            {% trans "Improving essential services such as healthcare and housing to enhance community well-being." %}
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bg-white rounded-2xl shadow-lg overflow-hidden w-full max-w-[300px] {% if LANGUAGE_BIDI %}text-right{% else %}text-left{% endif %}">
+        <img src="https://nda.ly/wp-content/uploads/2025/03/Group-246-300x248.png"
+             alt="{% trans 'Sustainable Development' %}" class="w-full h-44 object-cover" />
+        <div class="p-6">
+          <h3 class="text-lg font-extrabold text-yellow-500">{% trans "Sustainable Development" %}</h3>
+          <div class="w-10 h-[3px] bg-gray-900 mt-3 mb-4 {% if LANGUAGE_BIDI %}ml-auto{% endif %}"></div>
+          <p class="text-gray-700 text-sm leading-relaxed">
+            {% trans "Preserving natural resources, developing sustainable infrastructure, and promoting renewable energy." %}
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="bg-white rounded-2xl shadow-lg overflow-hidden w-full max-w-[300px] {% if LANGUAGE_BIDI %}text-right{% else %}text-left{% endif %}">
+        <img src="https://nda.ly/wp-content/uploads/2025/03/Group-242-300x248.png"
+             alt="{% trans 'Social Equity' %}" class="w-full h-44 object-cover" />
+        <div class="p-6">
+          <h3 class="text-lg font-extrabold text-yellow-500">{% trans "Social Equity" %}</h3>
+          <div class="w-10 h-[3px] bg-gray-900 mt-3 mb-4 {% if LANGUAGE_BIDI %}ml-auto{% endif %}"></div>
+          <p class="text-gray-700 text-sm leading-relaxed">
+            {% trans "Reducing economic and social disparities and promoting inclusivity across all segments of society." %}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Projects Section 5 -->
+<section class="max-w-6xl mx-auto px-4 py-16">
+  <h2 class="text-3xl md:text-4xl font-extrabold text-gray-800 text-center mb-4">
+    {% trans "Our Projects" %}
+  </h2>
+
+  <p class="text-center text-gray-600 mb-12">
+    {% trans "The National Development Agency is a governmental entity dedicated to achieving comprehensive and sustainable development across the country." %}
+  </p>
+
+  {% if featured_projects %}
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {% for p in featured_projects %}
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+          {% if p.image %}
+            <img src="{{ p.image.url }}" alt="{{ p.title_i18n }}" class="w-full h-48 object-cover">
+          {% else %}
+            <div class="w-full h-48 bg-gray-200"></div>
+          {% endif %}
+
+          <div class="p-6 {% if LANGUAGE_BIDI %}text-right{% endif %}">
+            <h3 class="text-xl font-bold text-yellow-500 mb-2">{{ p.title_i18n }}</h3>
+            <p class="text-gray-700 mb-4">
+              {{ p.summary_i18n|default:p.description_i18n|truncatechars:110 }}
+            </p>
+            <a href="{% url 'project_detail' p.pk %}" class="text-yellow-500 font-semibold hover:underline">
+              {% trans "Read more" %} →
+            </a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+    <div class="flex justify-center mt-12">
+      <a href="{% url 'projects' %}"
+         class="bg-yellow-500 text-gray-900 px-8 py-3 rounded-md font-bold uppercase hover:bg-yellow-600 transition">
+        {% trans "View All Projects" %}
+      </a>
+    </div>
+  {% else %}
+    <p class="text-center text-gray-600">
+      {% trans "No projects available." %}
+    </p>
+  {% endif %}
+</section>
+
+{% endblock %}
+
+{% block extra_js %}
+<script>
+  const heroSlides = document.querySelectorAll(".hero-slide");
+  let heroIndex = 0;
+
+  function showHero(i){
+    heroSlides.forEach(s => s.classList.remove("active"));
+    heroSlides[i].classList.add("active");
+  }
+
+  function nextHero(){
+    heroIndex = (heroIndex + 1) % heroSlides.length;
+    showHero(heroIndex);
+  }
+
+  setInterval(nextHero, 2000);
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const counters = document.querySelectorAll(".counter");
+    const statsSection = document.querySelector("#stats");
+    let started = false;
+
+    function animateCounter(counter) {
+      const target = +counter.getAttribute("data-target");
+      const suffix = counter.getAttribute("data-suffix") || "";
+      const duration = 1500;
+      const startTime = performance.now();
+
+      function update(now) {
+        const progress = Math.min((now - startTime) / duration, 1);
+        const value = Math.floor(progress * target);
+        counter.textContent = value + suffix;
+
+        if (progress < 1) requestAnimationFrame(update);
+        else counter.textContent = target + suffix;
+      }
+
+      requestAnimationFrame(update);
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !started) {
+          started = true;
+          counters.forEach(animateCounter);
+          observer.disconnect();
+        }
+      });
+    }, { threshold: 0.3 });
+
+    if (statsSection) observer.observe(statsSection);
+  });
+</script>
+{% endblock %}
